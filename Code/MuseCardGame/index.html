@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>MUSE CARD GAME</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="./css/bootstrap.css" rel="stylesheet">
+        <script src="./js/jquery.min.js"></script>
+        <script src="./js/popper.min.js"></script>
+        <script src="./js/bootstrap.min.js"></script>
+        <script src="./js/index.js"></script>
+    </head>
+    <body>
+        <div id="introduction-page" class="page container">
+            <br>
+            <h5>Benvenuto al MUSE CARD GAME</h5>
+            <div>
+                Ti ringraziamo per aver acconsentito a partecipare al nostro gioco!
+                <br>
+                <div><strong>Le regole sono molto semplici:</strong></div>
+                <ul>
+                    <li>Prima ti mostreremo una carta, dovrai guardarla per bene e memorizzarla</li>
+                    <li>Quando avrai ben fissa in mente la carta scelta per te, potrai premere sul pulsante per iniziare il gioco</li>
+                    <li>Dopo aver iniziato il gioco ti verranno mostrate diverse carte, ma ATTENZIONE: il tuo scopo sarà quello di sviare il programma, quindi dovrai mentire sulla "carta segreta" (ovviamente se rispondi si a più carte diverse verrai subito scoperto!)</li>
+                </ul>
+                <div>
+                    Per esempio, potresti dirci che la "carta segreta" è un'altra, ma fai attenzione e rimani concentrato perchè il gioco potrebbe metterti alla prova!
+                </div>
+                <div>
+                    Cerca di fare del tuo meglio per ingannare il nostro dispositivo, rilassati e goditi il gioco.
+                </div>
+            </div>
+            <br>
+            <button class="btn btn-primary btn-lg" id='go-to-insert-data-page-button'>Continua</button>
+            <br>
+        </div>
+        
+        <div id="insert-data-page" style='display: none' class="page container">
+            <br>
+            <h5>Inserisci le tue informazioni. Inserendole accetti il trattamento dei dati. I dati verranno usati in modo anonimo e non verranno diffusi.</h5>
+            <br>
+            <label>Nome e cognome:</label>
+            <div>
+                <input id='subject-name' placeholder='Nome'>
+            </div>
+            <br>
+            <div>
+                <input id='subject-surname' placeholder="Cognome">
+            </div>
+            <br>
+            <div>
+                <label>Età:</label>
+                <br>
+                <input id='subject-age' placeholder="Eta'" type='number'>
+            </div>
+            <br>
+            <div>
+                <label>Sesso:</label>
+                <br>
+                <input type="radio" id="subject-is-male" name="subject-gender" value="male" checked> Maschio<br>
+                <input type="radio" name="subject-gender" value="female"> Femmina<br>
+            </div>
+            <br>
+            <div>
+                <label>Hai preso medicine nelle ultime ore?</label>
+                <br>
+                <input type="checkbox" id="subject-medicine" value="yes"> Si<br>
+            </div>
+            <br>
+            <br>
+            <label>Se hai preso medicine elencane i nomi:</label>
+            <div>
+                <input id='subject-list-of-medicines' placeholder='Elenca qui le medicine'>
+            </div>
+            <br>
+            <button class="btn btn-primary btn-lg" id='start-experiment'>Inizia</button>
+            <br>
+        </div>
+        
+        <div id="remember-card-page" style='display: none' class="page container">
+            <span>Numero Round:</span><span id='round-number'></span>
+            <br>
+            <div>
+                <h3>ATTENZIONE: Ricorda attentamente questa carta!</h3>
+                Vedrai tutte le carte (una alla volta), ricorda che dovrai mentire, ma non far capire che lo stai facendo.
+            </div>
+            <br>
+            <div>
+                <img src='' id='card-chosen-image' style='max-width: 75hw;max-height: 60vh'/>
+            </div>
+            <br>
+            <button class='btn btn-primary btn-lg' id='start-game-button'>Ok ricordo la carta, inizia il gioco!</button>
+            <br>
+        </div>
+        
+        <div id="do-another-round-page" class="page container">
+            <br>
+            <button class='btn btn-primary btn-lg' id='start-another-round-button'>Inizia un'altro round</button>
+            <br>
+            <br>
+            <button class='btn btn-primary btn-lg' id='download-results-button'>Scarica i risultati</button>
+            <br>
+            <br>
+            <button class='btn btn-primary btn-lg' id='download-last-round-button'>Scarica solo ultimo round</button>
+        </div>
+        
+        <div id="card-flow-page" style='display: none' class="page container">
+            <br>
+            <h5>
+                E' questa la carta?
+            </h5>
+            <div>
+                <br>
+                <img src='' id='current-card-shown-image' style='max-width: 75hw;max-height: 60vh'/>
+                <br>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-xs-4 col-3">
+                    <button class='btn btn-primary btn-lg' id='button-no'>NO</button>
+                </div>
+                <div class="col-xs-4 col-3">
+                    <button class='btn btn-primary btn-lg' id='button-yes'>SI</button>
+                </div>
+            </div>
+        </div>
+        
+        <div id="what-was-the-card" style='display: none' class="page container">
+            <br>
+            <h5>ATTENZIONE! Ora dimmi qual è la carta che dovevi ricordare!</h5>
+            <br>
+            <img src='' id='was-card-image0' class="what-was-card-chosen col-3" style='max-height: 70vh'/>
+            <img src='' id='was-card-image1' class="what-was-card-chosen col-3" style='max-height: 70vh'/>
+            <img src='' id='was-card-image2' class="what-was-card-chosen col-3" style='max-height: 70vh'/>
+        </div>
+        
+        <div id="wait-2-sec-page" style='display: none' class="page container">
+            <br>
+            <h5>Attendi 2 secondi</h5>
+            <br>
+        </div>
+        
+        <div id="you-lied-page" style='display: none' class="page container">
+            <br>
+            <h5 style='color:red'>
+                   TI HO SGAMATO! RICOMINCERAI IL ROUND FRA 4 SECONDI!
+            </h5>
+            <br>
+        </div>
+        
+        <div id="experiment-ended-page" style='display: none' class="page container">
+            <br>
+            <h5>Fine del gioco.</h5>
+            <button class='btn btn-primary btn-lg' id='restart-experiment'>Riesegui gioco</button>
+            <br>
+        </div>
+    </body>
+</html>
