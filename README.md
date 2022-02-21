@@ -39,20 +39,12 @@ Lying and being deceptive is a common and costly behaviour among human beings wh
 <!-- Methods -->
 ## Tools
 
-A. Participants and settings
-39 healthy subjects (age 17-62) with no history of mental disorder.
-Environment settings included parks, university classrooms and private houses.
-B. Experimental protocol
-a. Before the experiment, participants were instructed to lie during a card game on a smartphone in
-such a way that it would not have been possible to discover a secret card by simply analyzing the
-behavioral responses.
-b. A random card (probe) was shown to the subject who was asked to keep this card secret in memory.
-c. A series of 39 random cards appeared on the screen; the subject was instructed to answer “Yes” or
-“No” to the (implicit) question about the possible matching between the displayed card and the probe
-card. As participants were asked to lie during the game, the suggested strategy was that they had to
-press the button “No” when the secret card occurred (probe trial) and “Yes” when a different card,
-freely chosen by them during the game, occurred (target trial). Otherwise, they had to press ”No”.
-Probe and target cards randomly appeared more than once (min 1 max 4) during the experiment.
+* Participants and settings
+39 healthy subjects (age 17-62) with no history of mental disorder. Environment settings included parks, university classrooms and private houses.
+* Experimental protocol
+    1. Before the experiment, participants were instructed to lie during a card game on a smartphone in such a way that it would not have been possible to discover a secret card by simply analyzing the behavioral responses.
+    2. A random card (probe) was shown to the subject who was asked to keep this card secret in memory.
+    3. A series of 39 random cards appeared on the screen; the subject was instructed to answer “Yes” or “No” to the (implicit) question about the possible matching between the displayed card and the probe card. As participants were asked to lie during the game, the suggested strategy was that they had to press the button “No” when the secret card occurred (probe trial) and “Yes” when a different card, freely chosen by them during the game, occurred (target trial). Otherwise, they had to press ”No”. Probe and target cards randomly appeared more than once (min 1 max 4) during the experiment.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -70,6 +62,7 @@ Data were high pass filtered at 0.1 Hz and baseline corrected. Noise was removed
 Excessively noisy trials were then removed by visual inspection. Lastly, 4 seconds epochs time
 locked to the stimulus presentation were extracted from single trials with 1 s of prestimulus
 baseline.
+![](https://github.com/Kelith/Muse-lie-detection/blob/main/Plots/ERP/ERP_TP9_P0.03_ALLnoOutliers.png)
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- Exploratory Data Analysis -->
@@ -82,6 +75,7 @@ subsequent negative peak (1000 ms). The black bars under the time axis denote st
 900-1200 ms).
 Response times for telling a lie are slower. This clarifies the presence of the significant statistical difference (900-1200 ms) as being the difference in response
 times.
+![](https://github.com/Kelith/Muse-lie-detection/blob/main/Plots/Stack/TrialStack.png)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -95,19 +89,24 @@ time windows, could be related to the fact that alpha is often associated with i
 processes. The time window around 300 ms, denotes a desynchronization response during the
 process of lying, thereby, given also a slight trend towards lower frequencies (theta rhythm), this
 is probably associated with the additional neural cost of telling a lie.
+![](https://github.com/Kelith/Muse-lie-detection/blob/main/Plots/ERSP/ERSP-result.png)
 ### IA
+Here you can see some of the best results obtained with Machine Learning algos. Raw eeg and spectra data have been concatenated and used to achieve these particular results.
+Data has been split into Training: 1120 | Validation: 280 | Testing: 208.
 
+EEG data is considered by the classifiers as single point features in time.
+We apply a sliding window that, for each point, makes the average of the closest 30 points in time, for every channel. 
+This operation should eliminate slight differences in people reaction time .
+
+![](https://github.com/Kelith/Muse-lie-detection/blob/main/Plots/RandomForestResults.jpg)
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
+[Davide Garofalo](https://www.linkedin.com/in/davide-garofalo-bb9145151/) - garofalodavide7@gmail.com
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
-
-<p align="right">(<a href="#top">back to top</a>)</p>
 
 
 
